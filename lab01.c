@@ -1,31 +1,26 @@
-
-
-    #include <stdio.h>
+#include <stdio.h>
 
 int main() {
-    int N, M;
+    float basic_salary, house_rent, conveyance_allowance, tax, total_salary;
 
-    // Input values for N and M
-    printf("Enter the value of N: ");
-    scanf("%d", &N);
+    // Input the basic salary
+    printf("Enter the basic salary: ");
+    scanf("%f", &basic_salary);
 
-    printf("Enter the value of M: ");
-    scanf("%d", &M);
+    // Calculate house rent (20% of basic salary)
+    house_rent = 0.20 * basic_salary;
 
+    // Calculate conveyance allowance (10% of basic salary)
+    conveyance_allowance = 0.10 * basic_salary;
 
+    // Calculate tax deduction (5% of basic salary)
+    tax = 0.05 * basic_salary;
 
-     int count = 0;
-    for (int i = 1; i <= M; i++) {
-        if (i % N == 0) {
-            count++;
-        }
-      }
+    // Calculate total monthly salary
+    total_salary = basic_salary + house_rent + conveyance_allowance - tax;
 
-    printf("The number of values divisible by %d that are less than or equal to %d is: %d\n", N, M, count);
+    // Display the total salary
+    printf("The total monthly salary is: %.2f\n", total_salary);
 
-
-
-return 0;
+    return 0;
 }
-
-
